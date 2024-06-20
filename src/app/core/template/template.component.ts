@@ -8,8 +8,18 @@ import { Router } from '@angular/router';
 })
 export class TemplateComponent {
   currentUser: any;
+  isAutenticated: boolean;
 
-  constructor(private router: Router) {}
+
+  constructor(private router: Router) { this.isAutenticated=true}
 
   ngOnInit(): void {}
+
+  login(){
+    this.router.navigate(['login']);
+  }
+  logout(){
+    //this.authService.logout();
+    this.router.navigate(['inicio']);
+  }
 }
