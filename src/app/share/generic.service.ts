@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class GenericService {
 
   // URL del API, definida en enviroments->enviroment.ts
-  urlAPI: string ='https://localhost:7199/';
+  urlAPI: string ='https://localhost:7199/api/user';
   //Información usuario actual
   currentUser: any;
 
