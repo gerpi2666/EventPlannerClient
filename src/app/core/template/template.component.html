@@ -1,1 +1,67 @@
-<h1>HELOOEOEOEOEO</h1>
+<div class="container-fluid">
+    <app-header></app-header>
+    <div class="row">
+        <aside class="col-md-3 bg-dark text-light">
+            <div class="p-3">
+                <h5 class="mb-4">Sidebar</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item" *ngIf="currentUser.roleId === 1">
+                        <a class="nav-link" routerLink="/Dash/user/adminProfile">
+                            <i class="bi bi-receipt"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item" *ngIf="currentUser.roleId === 1">
+                        <a class="nav-link" routerLink="/Dash/cupon">
+                            <i class="bi bi-receipt"></i> Cupones
+                        </a>
+                    </li>
+                    <li class="nav-item" *ngIf="currentUser.roleId === 1">
+                        <a class="nav-link" routerLink="/Dash/user/dashboard">
+                            <i class="bi bi-person-circle"></i> Usuarios
+                        </a>
+                    </li>
+                    <li class="nav-item" *ngIf="currentUser.roleId === 1">
+                        <a class="nav-link" routerLink="/Dash/material">
+                            <i class="bi bi-cart4"></i> Materiales
+                        </a>
+                    </li>
+                    <li class="nav-item" *ngIf="currentUser.roleId === 1">
+                        <a class="nav-link" routerLink="/Dash/center">
+                            <i class="bi bi-building"></i> Centros
+                        </a>
+                    </li>
+                    <li class="nav-item" *ngIf="currentUser.roleId === 1">
+                        <a class="nav-link" routerLink="/Dash/orden">
+                            <i class="bi bi-file-earmark-check"></i> Ordenes
+                        </a>
+                    </li>
+                    <li class="nav-item" *ngIf="currentUser.roleId === 2">
+                        <a class="nav-link" routerLink="/Dash/cupon">
+                            <i class="bi bi-receipt"></i> Cupones
+                        </a>
+                    </li>
+                    <li class="nav-item" *ngIf="currentUser.roleId === 2">
+                        <a class="nav-link" routerLink="/Dash/orden">
+                            <i class="bi bi-file-earmark-check"></i> Mis ordenes
+                        </a>
+                    </li>
+                    <li class="nav-item" *ngIf="currentUser.roleId === 3">
+                        <a class="nav-link" routerLink="/Dash/center/profile">
+                            <i class="bi bi-speedometer2"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item" *ngIf="currentUser.roleId === 3">
+                        <a class="nav-link" routerLink="/Dash/orden/center">
+                            <i class="bi bi-file-earmark-check"></i> Ordenes del centro
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <main class="col-md-9">
+            <div class="p-3">
+                <router-outlet></router-outlet>
+            </div>
+        </main>
+    </div>
+</div>

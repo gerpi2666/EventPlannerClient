@@ -4,8 +4,9 @@ import { TemplateComponent } from './core/template/template.component';
 import { LoginComponent } from './users/login/login.component';
 
 const routes: Routes = [
-  {path:'Dash', component:TemplateComponent},
-  {path:'Login',component:LoginComponent}
+  {path:'',component:LoginComponent},
+  {path:'Dash',component:TemplateComponent}
+
 ];
 
 @NgModule({
