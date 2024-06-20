@@ -11,6 +11,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card'; 
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatTabsModule} from '@angular/material/tabs';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatTableModule } from '@angular/material/table';
+
 
 import { MatSelectModule } from '@angular/material/select';
 
@@ -38,6 +41,8 @@ import {MatDialogModule} from "@angular/material/dialog";
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
+    MatTableModule,
+    MatCheckboxModule,
     ReactiveFormsModule
 
   ]

@@ -22,16 +22,15 @@ export class LoginComponent implements OnInit {
 
   constructor(
     public fb: FormBuilder,
+    private gService: GenericService,
     private router: Router,
     private route: ActivatedRoute,
-    private dialog: MatDialog,
-    private gService: GenericService,
     private noti: NotificacionService
   ) {
     this.reactiveForm();
   }
+ 
 
-  // Definir el formulario con sus reglas de validación
   reactiveForm() {
     this.formulario = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -56,7 +55,7 @@ export class LoginComponent implements OnInit {
       .create('login', { Email: 'admin1@example.com', Password: '123456' })
       .subscribe({
         next: (call) => {
-          if (call.statusCode == 404) {
+          if (call.statusCode == 404 || call.statusCode == 401 ) {
             this.noti.mensaje(
               'Error',
               'Credenciales incorrectas',
@@ -103,10 +102,8 @@ export class LoginComponent implements OnInit {
   }
 
   public errorHandling = (control: string, error: string) => {
-    return (
-      this.formulario.controls[control].hasError(error) &&
-      this.formulario.controls[control].invalid &&
-      (this.makeSubmit || this.formulario.controls[control].touched)
-    );
+    return this.formulario.controls[control].hasError(error);
   };
+
+ 
 }
