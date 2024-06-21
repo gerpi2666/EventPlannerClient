@@ -52,10 +52,10 @@ export class LoginComponent implements OnInit {
     }
 
     this.gService
-      .create('/login', { Email: 'admin1@example.com', Password: '123456' })
+      .create('/login',this.formulario.value)
       .subscribe({
         next: (call) => {
-          if (call.statusCode == 404 || call.statusCode == 401 ) {
+          if (call.statusCode == 400 || call.statusCode == 401 ) {
             this.noti.mensaje(
               'Error',
               'Credenciales incorrectas',
