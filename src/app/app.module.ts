@@ -17,7 +17,7 @@ import { CoreModule } from './core/core.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-
+    
     AppRoutingModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(), 
